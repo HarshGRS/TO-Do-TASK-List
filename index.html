@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📝 TaskMate</h1>
+    <p id="greeting" class="greeting-text">Welcome! Sign in to manage your tasks.</p>
+
+    <div id="g_id_onload"
+         data-client_id="YOUR_GOOGLE_CLIENT_ID"
+         data-callback="handleCredentialResponse">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
+
+    <p id="signin-status" class="sign-in-message"></p>
+
+    <form id="task-form" style="display:none;">
+      <input type="text" id="task-input" placeholder="What's your next big task?" required />
+      <input type="text" id="datetime-picker" placeholder="Pick due date & time" required />
+      <button type="submit">➕ Add Task</button>
+    </form>
+
+    <section id="tasks" style="display:none;">
+      <h2>📌 Pending Tasks</h2>
+      <ul id="task-list"></ul>
+    </section>
+
+    <section style="display:none;">
+      <h2>📜 Task History</h2>
+      <ul id="task-history"></ul>
+    </section>
+  </div>
+
+  <footer>ALL COPY RIGHTS reserved By HARSH R.S , GTB4CEC</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
