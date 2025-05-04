@@ -1,4 +1,4 @@
-// Simulated auth state (for demo)
+
 let isAuthenticated = false;
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -13,32 +13,22 @@ document.addEventListener('DOMContentLoaded', function () {
   const taskList = document.getElementById('task-list');
   const taskHistory = document.getElementById('task-history');
 
-  // Flatpickr setup
   flatpickr("#datetime-picker", {
     enableTime: true,
     dateFormat: "Y-m-d H:i",
     minDate: "today"
   });
 
-  // Simulate Sign In
   signInBtn.addEventListener('click', () => {
-    // In real app, redirect to OAuth login or call backend
     isAuthenticated = true;
-
-    // Show success
     loginStatus.textContent = "Sign in successfully ✅";
     loginStatus.style.color = "#00ff00";
-
-    // Show form and sections
     taskForm.style.display = "block";
     tasksSection.style.display = "block";
     historySection.style.display = "block";
-
-    // Hide sign-in button
     signInBtn.style.display = "none";
   });
 
-  // Add Task
   taskForm.addEventListener('submit', function (e) {
     e.preventDefault();
     if (!isAuthenticated) {
@@ -54,9 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
       li.textContent = `${taskText} — due: ${dueTime}`;
       taskList.appendChild(li);
 
-      // Save to history
       const historyItem = document.createElement('li');
-      historyItem.textContent = `${taskText} — completed/added: ${new Date().toLocaleString()}`;
+      historyItem.textContent = `${taskText} — added: ${new Date().toLocaleString()}`;
       taskHistory.appendChild(historyItem);
 
       taskInput.value = '';
@@ -64,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Dynamic greeting
   const greetingEl = document.getElementById('greeting');
   const hour = new Date().getHours();
   let greetingText = "Welcome!";
