@@ -1,41 +1,123 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background: url('todobackground.jpg') no-repeat center center fixed;
-  background-size: cover;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
+  background-image: url('todobackground.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+/* Container Styling */
 .container {
-  background-color: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 1rem;
   padding: 2rem;
-  margin: auto;
-  margin-top: 2rem;
-  width: 90%;
-  max-width: 600px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #00f0ff;
+  margin: 2rem auto;
+  width: 95%;
+  max-width: 700px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
 }
 
-input, button {
-  padding: 0.5rem;
-  margin: 0.3rem;
-  border-radius: 5px;
+/* Title */
+.app-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #00bfff;
+  margin-bottom: 1rem;
+}
+
+/* Inputs and Form */
+form input,
+form button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
   border: none;
+  font-size: 1rem;
 }
 
-button {
-  background-color: #00c4cc;
+form input {
+  background: #1c1c1c;
+  color: #fff;
+}
+
+form button {
+  background: #00bfff;
   color: white;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-button:hover {
-  background-color: #009ca1;
+form button:hover {
+  background: #009acd;
 }
 
-footer {
+/* Task Sections */
+h2 {
+  margin-top: 2rem;
+  color: #7df9ff;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  background: #222;
+  margin-bottom: 0.5rem;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+li:hover {
+  transform: translateX(5px);
+}
+
+/* Auth Button */
+#google-signin-btn {
+  background: #4285f4;
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+#google-signin-btn:hover {
+  background: #2a65c4;
+}
+
+/* Login status message */
+.login-status {
   text-align: center;
-  font-color: #0000B;
-  font-weight: 1rem
-  margin-top: 1000px;
+  font-weight: bold;
+  color: #0f0;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ccc;
 }
